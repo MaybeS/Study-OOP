@@ -28,7 +28,7 @@ C++에서는 **오버로딩**을 지원합니다. C에서는 같은 이름을 �
 
 ```
 template<typename T>
-void add(T a, T b)
+T add(T a, T b)
 {
   return a + b;
 }
