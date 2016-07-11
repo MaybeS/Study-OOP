@@ -1,0 +1,7 @@
+- Book 클래스의 생성자로 제목, 저자, 내용을 초기화 시킨것 아주 잘했어요.
+- Book 클래스의 written 메서드 아주 좋아요. 이것을 통해서 bookshelf배열에 k값이 잘 들어갈 수 있겠죠.
+- 헌데 written 메서드만 클래스 외부에서 구현한 이유가 있나요?
+- int k = 0;을 전역으로 두지 않고 static 메서드안에 static 변수로 할당하면 정적값을 가질 수 있어요.
+- Student 클래스의 생성자와 메서드들을 잘 구현했어요.
+- cin도 잘썼어요.
+- written 클래스로 반환되는 Book과 bookshelf에 있는 Book은 같은 Book일까요? 한번 main에서 반환되는 Book의 값을 변경해보고 bookshelf의 값도 변경되었나 확인해 봐요.

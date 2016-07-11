@@ -1,0 +1,4 @@
+- Book 클래스의 생성자와 기본 생성자를 잘 만들었어요.
+- Student 클래스의 생성자와 메서드들도 잘 구현되었어요.
+- saving 배열을 어떤 다른 변수 x같은것을 선언해서 다뤘어도 괜찮을꺼같아요.
+- hackseng배열은 이미 할당된 Student 클래스이지만 초기화할때 hackseng[i] = Student(name, age, major, StdNumber)로 초기화 할수도 있어요.

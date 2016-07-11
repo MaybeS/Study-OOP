@@ -1,0 +1,2 @@
+## 둘째 날
+눈에 띄는 변화는 2번째 줄의 *using namepsace std;*와 5번째 줄의 *cout << << endl*일것입니다.
