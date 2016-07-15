@@ -173,9 +173,9 @@ int x = [](int a, int b)->int{ return a + b;}(3, 5);
 ```
 void thisIsFunction(int a) { return -a }
 ...
-function<void(int)> function = thisIsFunction;
+function<void(int)> fx = thisIsFunction;
 ...
-  int x = function(10); // x = -10
+  int x = fx(10); // x = -10
 
 ```
 
