@@ -160,7 +160,8 @@ C++11에서 추가된 비교적 새로운 기능인데, 이런 익명함수는 �
 
 추가로 [MSDN](https://msdn.microsoft.com/ko-kr/library/dd293608.aspx)에 좋은 설명들이 많이 있어요.
 
-오늘의 과제는 sort함수와 
+오늘의 과제는 sort에 세번째 인자로 람다를 넣어서 오름차순 정렬이 아닌 내림차순 정렬을 해주는 함수를 만들어 보세요.
+*인자로 begin(), end()와 같은 iterator를 받아도 되고 vector<T>같이 컨테이너를 받아도 됩니다.*
 
 + 추가 과제(easy): 
 + 추가 과제(hard):
