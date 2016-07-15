@@ -102,6 +102,8 @@ vector는 템플릿 클래스이므로 int나 double같은 자료형말고 다�
 오늘은 STL의 여러가지 반복자와 알고리즘들에 대해서 알아볼 거에요.
 
 STL에서 반복자는 iterator라고 하는데 포인터와 상당히 비슷하며 우리가 앞서 배웠던 컨테이너들을 순회할 수 있는 객체에요. 저번 시간에 vector에 대해서 배웠는데 조금 신경 써서 메서드들을 살펴본 친구들은 begin()이나 end()같은 이상한 메서드들을 발견했을지도 몰라요. 간단한 반복자를 사용한 아래의 코드를 먼저 살펴봅시다.
+
+*algorithm 헤더가 필요할 수 도 있습니다.*
 ```
 vector<int> v = { 6, 9, 5 };
 for(vector<int>::iterator iter = v.begin(); iter != v.end(); ++iter)
