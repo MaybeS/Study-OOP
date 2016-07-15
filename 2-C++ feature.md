@@ -171,19 +171,75 @@ int x = [](int a, int b)->int{ return a + b;}(3, 5);
 
 `functional`헤더를 추가하면 사용할 수 있는 function클래스는 이런 람다 함수나 함수 객체 같은 것들을 나타낼 수 있어요. 
 ```
-void thisIsFunction(int a) { return -a }
+int thisIsFunction(int a) { return -a; }
 ...
-function<void(int)> fx = thisIsFunction;
+function<int(int)> fx = thisIsFunction;
+function<void(int)> hello = [](int v){ cout << v << endl;};
 ...
-  int x = fx(10); // x = -10
-
+  hello(fx(10));
 ```
+아마도 -10이 결과로 나오겠죠.
+
+그럼 저번에 배웠던 sort와 함께 써봅시다. 오버라이딩된 sort함수를 잘 살펴보면 인자를 세개로 갖는 소트함수가 `(_RanIt _First, _RanIt _Last, _Pr _Pred)`와 같은 형태로 정의되어 있는것을 확인해 볼 수 있어요. _RanIt는 저번에 배운 Iterator겠죠, _Pr _pred는 Predicate(술어)의 Pr인데, 여기에 함수를 넣어줄 수 있습니다. 오름 차순 정렬이 아닌 내림 차순으로 정렬하고 싶다면, Greater같은 이상한 짓을 해도 되지만, 
+```
+bool comp(int first, int second) {
+  return first > second;
+}
+```
+이런 함수를 하나 정의하고, `sort(v.begin(), v.end(), comp);` 이렇게 호출해주면 내림 차순으로 정렬됩니다.
+익명 함수로 표현하면 
+```
+sort(v.begin(), v.end(), [](int first, int second)->bool{ return first > second; });
+```
+이렇게 쓸 수 도 있습니다.
+
 
 추가로 [MSDN](https://msdn.microsoft.com/ko-kr/library/dd293608.aspx)에 좋은 설명들이 많이 있어요.
 
-오늘의 과제는 sort에 세번째 인자로 람다를 넣어서 오름차순 정렬이 아닌 내림차순 정렬을 해주는 함수를 만들어 보세요.
+오늘의 과제는 sort에 세번째 인자로 람다를 넣어서 아래에 있는 구조체를 정렬 시켜 보도록 해요.
+```
+struct Student {
+  int id;
+  int major_code;
+}
+```
+- major_code에 대해 오름 차순으로 정렬
+- major_code가 같다면 id에 대해 오름 차순으로 정렬
+- 
+*아래에 테스트용 코드가 있습니다.*
 
-*인자로 begin(), end()와 같은 iterator를 받아도 되고 vector<T>같이 컨테이너를 받아도 됩니다.*
++ 추가 과제(easy): 쉬운 과제는 없습니다.
++ 추가 과제(hard): 함수 포인터와 function클래스의 차이에 대해서 알아보세요.
 
-+ 추가 과제(easy): 
-+ 추가 과제(hard):
+```
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+struct Student {
+	int id;
+	int major_code;
+	Student(int id, int major) : id(id), major_code(major) {}
+};
+
+int main()
+{
+	vector<Student> students;
+	students.push_back(Student(14, 2));
+	students.push_back(Student(25, 2));
+	students.push_back(Student(36, 2));
+	students.push_back(Student(17, 1));
+	students.push_back(Student(29, 2));
+	students.push_back(Student(30, 3));
+	students.push_back(Student(10, 3));
+	students.push_back(Student(11, 4));
+	students.push_back(Student(12, 5));
+	students.push_back(Student(13, 6));
+    
+	sort(students.begin(), students.end(), *여기에 채워넣으세요*);
+    
+	for (Student s : students)
+		cout << s.id << ", " << s.major_code << endl;
+}
+```
