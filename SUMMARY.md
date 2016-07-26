@@ -6,4 +6,5 @@
 * [첫주, 과제](1-assignment.md)
 * [둘째주, STL과 여러 C++의 특색들](2-C++ feature.md)
 * [둘째주, 과제](2-assignment.md)
+* 세째주, 이것저것 복습하기
 
